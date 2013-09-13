@@ -1,0 +1,87 @@
+{% load dajaxice_templatetags %}
+<html>
+<head>
+<title>Shaastra - Register</title>
+{% dajaxice_js_import %}
+<body>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+<form action="." method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.first_name.errors }}
+        <label for="first_name">First Name :</label>
+        {{ form.first_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.last_name.errors }}
+        <label for="last_name">Last Name  :</label>
+        {{ form.last_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.username.errors }}
+        <label for="username">User Name  :</label>
+        {{ form.username }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.password.errors }}
+        <label for="password">Password : </label>
+        {{ form.password }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.password_again.errors }}
+        <label for="password_again">Password Again:</label>
+        {{ form.password_again }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.gender.errors }}
+        <label for="gender">Gender :</label>
+        {{ form.gender }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.age.errors }}
+        <label for="age">Age :</label>
+        {{ form.age }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label for="email">EMAIL ID :</label>
+        {{ form.email }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.college_roll.errors }}
+        <label for="college_roll">College Rollno:</label>
+        {{ form.college_roll}}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.college.errors }}
+        <label for="college">College :</label>
+        {{ form.college}}
+    </div>
+    
+    <input type="button" onclick="Dajaxice.users.dajaxice_example(my_callback)" value="Register College">
+    <script>
+    function my_callback(data){
+    alert(data.message);
+}   </script>
+    <div class="fieldWrapper">
+        {{ form.mobile_number.errors }}
+        <label for="mobile_number">Mobile number :</label>
+        {{ form.mobile_number }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.want_accomodation.errors }}
+        <label for="first_name">Want Accomodation :</label>
+        {{ form.want_accomodation  }}
+    </div>
+    <div id = "middle_center">
+        <p id="error">{{msg}}</p> 
+    <p><input type="submit" value="Register" /></p><br>
+    <a href="http://127.0.0.1:8000/user/login/">Click here to login</a>
+</form>
+</body>
+</html>

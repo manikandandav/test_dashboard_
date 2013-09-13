@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Shaastra - Log in</title>
+<body>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+<form action="." method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.username.errors }}
+        <label for="username">Username:</label>
+        {{ form.username }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.password.errors }}
+        <label for="password">Password : </label>
+        {{ form.password }}
+    </div>
+    <div id = "middle_center">
+        <p id="error">{{msg}}</p> 
+    <p><input type="submit" value="Login" /></p><br>
+    <a href="http://127.0.0.1:8000/user/register/">Click here to Register</a>
+</form>
+</body>
+</html>

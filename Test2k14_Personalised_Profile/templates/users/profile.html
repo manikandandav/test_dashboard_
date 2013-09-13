@@ -1,0 +1,32 @@
+<html>
+{% load dajaxice_templatetags %}
+<head>
+{% dajaxice_js_import %}
+{%csrf_token%}
+</head>
+<title>Welcome Mr.{{userprofile.user.first_name}}</title>
+<body>
+<p style=" position: absolute; top: 0; left: 0; width: 100%;text-align: center;">Logged in as {{userprofile.user.first_name}}</p>
+<p style=" position: absolute; top: 0; left: 0; width: 100%;text-align: right;"><a href="http://127.0.0.1:8000/user/logout/">Logout                </a></p>
+
+<br><br>
+<a href="http://www.google.com/">
+   <input type="button" value="Edit Profile" />
+</a>
+<br><br>
+<a href="http://www.google.com/">
+   <input type="button" value="Event Updates" />
+</a>
+<a href="http://www.google.com/">
+   <input type="button" value="Register for Events" />
+</a>
+<a href="http://www.google.com/">
+   <input type="button" value="Hospitality Updates" />
+</a>
+<a href="http://www.google.com/">
+   <input type="button" value="Print my Schedule" />
+</a>
+
+
+</body>
+</html>
